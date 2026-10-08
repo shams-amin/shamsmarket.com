@@ -123,19 +123,56 @@ theme overrides some of them in the two blocks just below. Change a value there 
 - **Repository:** `shams-amin/shamsmarket.com` on GitHub. It is public because free GitHub Pages needs a public
   repository. Do not put anything private in it.
 - **GitHub Pages:** publishes branch `main`, folder `/docs`. Custom domain `www.shamsmarket.com`, set by
-  `docs/CNAME`. HTTPS is enforced. `shamsmarket.com` without the `www` redirects to `www.shamsmarket.com`.
-- **Domain:** `shamsmarket.com` is registered with Squarespace Domains. The DNS records are managed there:
-  four `A` records and four `AAAA` records for `shamsmarket.com` that point to GitHub Pages, and one `CNAME`
-  record for `www` that points to `shams-amin.github.io`. There is no email on this domain.
+  `docs/CNAME`. `shamsmarket.com` without the `www` redirects to `www.shamsmarket.com`.
+- **HTTPS:** GitHub issues and renews the certificate by itself, and "Enforce HTTPS" in the repository's Pages
+  settings sends `http://` visitors to `https://`. The certificate was first requested on 2026-10-08. If
+  `http://www.shamsmarket.com/` ever stops redirecting to `https://`, switch Enforce HTTPS back on there, or
+  run `gh api -X PUT repos/shams-amin/shamsmarket.com/pages -F https_enforced=true`.
+- **Domain:** `shamsmarket.com` is registered with Squarespace Domains and renews there every autumn.
+  `shamsmarket.net` is registered there too and forwards to `shamsmarket.com`. There is no email on either.
+- **DNS records:** four `A` records for `shamsmarket.com` (`185.199.108.153`, `185.199.109.153`,
+  `185.199.110.153`, `185.199.111.153`) and one `CNAME` record that points `www` to `shams-amin.github.io`.
+  These are the addresses GitHub publishes for GitHub Pages. One `TXT` record,
+  `_github-pages-challenge-shams-amin` with the value `8f39c52e3e0f77bff7b1f6d844b7de`, proves to GitHub that
+  the domain belongs to the `shams-amin` account, so nobody else can publish a GitHub Pages site on it. Keep
+  all six records wherever the DNS is managed.
 - **Cost:** hosting is free. The only cost is the yearly domain renewal at Squarespace.
-- The old Wix website is not used any more.
 
 If the site is down, check in this order: the latest run under the repository's Actions tab ("pages build and
-deployment"), the Pages settings of the repository, and the DNS records at Squarespace.
+deployment"), the Pages settings of the repository, and the DNS records (the next section says where they are).
+
+## The move away from Wix: one step left
+
+Until 2026-10-08 this address showed a website built on Wix. The new site went live that day by changing the
+DNS records. One step is left: the domain still uses Wix's nameservers (`ns0.wixdns.net` and
+`ns1.wixdns.net`), so the DNS records above are kept in Shams's Wix account, under Domains, shamsmarket.com,
+Manage DNS Records.
+
+**Until the nameservers have been moved, do not cancel the Wix plan, and do not unassign, remove or transfer
+the domain inside Wix.** Any of these can delete the DNS records and take the site down. Wix now shows a
+warning that the domain "is set to point away from Wix", with a Try Again button. The warning is expected.
+Do not click Try Again: it starts Wix's connection steps again, which can point the domain back at the old
+Wix site.
+
+To finish, in Shams's Squarespace account (Domains, shamsmarket.com):
+
+1. Squarespace asks for Shams's Google sign-in again before it allows a DNS change. Only Shams can do that.
+   Ask him to open DNS, DNS Settings, click ADD RECORD, then CONTINUE, and pick his Google account.
+2. Under DNS Settings, Custom records, add the six records above (host `@` for the `A` records) and four
+   `AAAA` records for `@`: `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`,
+   `2606:50c0:8003::153`.
+3. Under DNS, Domain Nameservers, choose USE SQUARESPACE NAMESERVERS.
+4. Run the checks below. Some networks keep using the old nameservers for up to 48 hours, which is why the
+   records stay in Wix as well.
+5. Two days after step 3, tell Shams that the Wix plan can be cancelled and the domain removed from Wix.
+   Cancelling is his decision.
+6. Rewrite this section to say that the DNS records are managed at Squarespace, and delete these steps.
 
 ## Checking the live site
 
 ```
 curl -sI https://www.shamsmarket.com/ | head -5        # expect HTTP/2 200
 curl -sI https://shamsmarket.com/ | head -5            # expect a 301 to https://www.shamsmarket.com/
+dig +short www.shamsmarket.com                         # expect shams-amin.github.io and four 185.199.x.153 addresses
+dig +short NS shamsmarket.com                          # the nameservers in use (Wix's until the move is finished)
 ```
