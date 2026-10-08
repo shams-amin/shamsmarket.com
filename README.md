@@ -1,6 +1,6 @@
 # shamsmarket.com
 
-The website of Shams Market, an Afghan bakery, halal butcher, grocery and kitchen at 3510 Auburn Blvd,
+The website of Shams Market, an Afghan bakery, halal butcher, grocery and kitchen at 3510 Auburn Blvd #2,
 Sacramento, CA. Live at https://www.shamsmarket.com.
 
 ## Changing the site
@@ -24,6 +24,7 @@ You can also edit by hand: change a file under `docs/`, commit to `main`, and it
 - GitHub Pages serves that folder for free at `www.shamsmarket.com`.
 - The domain is registered with Squarespace Domains, and its DNS records point to GitHub Pages.
 - `python3 tools/check.py` checks the files before a change is published.
+- `SEO.md` has the rules for how the site shows up in search, and a log of what was changed for search.
 
 ## Photos
 

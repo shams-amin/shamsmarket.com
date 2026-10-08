@@ -1,7 +1,7 @@
 # Shams Market website: instructions for Claude
 
 This repository is the live website of Shams Market, an Afghan bakery, halal butcher, grocery and kitchen at
-3510 Auburn Blvd, Sacramento. The owner is Shams Amin. The site is one static page at
+3510 Auburn Blvd #2, Sacramento. The owner is Shams Amin. The site is one static page at
 https://www.shamsmarket.com.
 
 There is no build step and nothing to install. The files in `docs/` are the website exactly as visitors get it.
@@ -25,6 +25,8 @@ To undo a change, `git revert` the commit and push. The page returns to how it w
 
 - Do the whole job without checking in. Ask first only when the request could be read two ways and the
   difference would be public, such as a price, a date or a phone number.
+- Work only in this repository. Do not open, attach, clone or change any of Shams's other GitHub
+  repositories, whatever the task.
 - The wording on the page was approved. Change the words he asks about and leave the rest alone.
 - No photo may show a person or any part of a person. Open every photo at full size and look at all of it
   before it goes on the page.
@@ -47,6 +49,8 @@ To undo a change, `git revert` the commit and push. The page returns to how it w
 | `docs/shop/`, `docs/product-page/` | Addresses from the old website. Each one sends the visitor to the new page. |
 | `docs/CNAME`, `docs/.nojekyll` | Files GitHub Pages needs. Do not change, move or delete them. |
 | `docs/robots.txt`, `docs/sitemap.xml` | For search engines. |
+| `docs/google4219baa0cb6fee68.html` | Proves to Google Search Console that Shams owns the site. Do not change, rename or delete it. |
+| `SEO.md` | The rules for search: the searches the store wants, what must match the Google listing, who may change what, and a log. Read it before touching the title, headline, address, phone or the facts for search engines. |
 | `tools/check.py` | The check to run before every push. |
 
 Do not rename or move the `docs/` folder. GitHub Pages is set to publish that exact folder.
@@ -80,10 +84,15 @@ say open.
 
 ### Phone number or address
 
+The address and phone on the page must read exactly as on the store's Google listing, character for
+character: `3510 Auburn Blvd #2, Sacramento, CA 95821` and `(916) 514-1471`. Change them here only when they
+have changed on the Google listing.
+
 The phone number is in `tel:` links, in visible text, in one `data-copy` value, and in `"telephone"` near the top.
-The address is in visible text, in one `data-copy` value, in the directions links (the long Google Maps
-address that starts `https://www.google.com/maps/dir/`), in the page description, and in the `"address"` block
-near the top. Change every one. Search the file for the old value to be sure none is left.
+The address is in visible text (the big line and the footer), in one `data-copy` value, in the title of the
+map, and in the `"address"` block near the top. Change every one; `tools/check.py` reports any that disagree.
+The directions links and the map point at the Google listing itself, so they follow the listing. If the store
+ever moves, get a new map address from Google Maps (Share, then Embed a map) and new `"geo"` numbers.
 
 ### Menu items
 
@@ -117,6 +126,19 @@ and `"image"` values near the top of the file.
 
 These are named values at the top of `docs/assets/site.css` (for example `--red`, `--black`, `--sans`). The dark
 theme overrides some of them in the two blocks just below. Change a value there and it changes everywhere.
+
+## Search (SEO)
+
+`SEO.md` holds the rules. The short version:
+
+- The title, the description, the one `<h1>`, the address, the phone and the facts for search engines were set
+  on 2026-10-08 so that the page agrees with the store's Google listing and says what people search for.
+  Do not change them, or the words visitors read, for search reasons without asking Shams.
+- Never invent a fact, a search volume or a ranking. Nothing hidden, nothing written for AI systems.
+- A new page needs Shams's facts and something of his own (a menu with prices, his photos). No copies of a
+  page with a word swapped.
+- After a search change, leave it alone for 60 days.
+- The site is verified in Google Search Console under Shams's Google account, and the sitemap is submitted.
 
 ## Hosting and domain
 
