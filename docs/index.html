@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- ============================================================================================
+     SHAMS MARKET, shamsmarket.com. This file is the whole website.
+     The words on the page are in the <body> below: edit them right here.
+     Looks are in assets/site.css. The live "Open now" status is in assets/site.js.
+     How to publish a change, and what has to stay in step: see CLAUDE.md at the top of the repository.
+     ============================================================================================ -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shams Market | Afghan Bakery, Halal Butcher &amp; Grocery in Sacramento</title>
+<!-- HOURS (6 of 6): the description below and the "openingHoursSpecification" block further down -->
+<meta name="description" content="Shams Market is an Afghan bakery, halal butcher, grocery and restaurant at 3510 Auburn Blvd in Sacramento. Fresh naan baked daily, halal meat cut how you like it, and Afghan home cooking. Open every day, 9 AM to 9 PM.">
+<link rel="canonical" href="https://www.shamsmarket.com/">
+<meta name="theme-color" content="#121010">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shams Market">
+<meta property="og:title" content="Shams Market | Afghan Bakery, Halal Butcher &amp; Grocery in Sacramento">
+<meta property="og:description" content="Shams Market is an Afghan bakery, halal butcher, grocery and restaurant at 3510 Auburn Blvd in Sacramento. Fresh naan baked daily, halal meat cut how you like it, and Afghan home cooking. Open every day, 9 AM to 9 PM.">
+<meta property="og:url" content="https://www.shamsmarket.com/">
+<meta property="og:image" content="https://www.shamsmarket.com/img/hero-2000.jpg">
+<meta property="og:image:width" content="2000">
+<meta property="og:image:height" content="1333">
+<meta property="og:image:alt" content="Afghan naan topped with nigella and sesame seeds">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" as="image" href="img/hero-2000.jpg" imagesrcset="img/hero-1000.jpg 1000w, img/hero-2000.jpg 2000w" imagesizes="(min-width: 1000px) 64vw, 100vw">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&amp;family=Vazirmatn:wght@500&amp;display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<!-- Facts for Google and other search engines. Keep them the same as what the page says. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "GroceryStore",
+    "Restaurant"
+  ],
+  "name": "Shams Market",
+  "alternateName": [
+    "Shams Market and Restaurant",
+    "شمس مارکیت"
+  ],
+  "url": "https://www.shamsmarket.com/",
+  "telephone": "+1-916-514-1471",
+  "image": "https://www.shamsmarket.com/img/hero-2000.jpg",
+  "logo": "https://www.shamsmarket.com/apple-touch-icon.png",
+  "servesCuisine": "Afghan",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3510 Auburn Blvd",
+    "addressLocality": "Sacramento",
+    "addressRegion": "CA",
+    "postalCode": "95821",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "09:00",
+      "closes": "21:00"
+    }
+  ],
+  "hasMap": "https://maps.google.com/?cid=8243531686769986245",
+  "sameAs": [
+    "https://www.tiktok.com/@shams_market"
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- Icons used by the buttons. -->
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5s-7-6.3-7-11.4a7 7 0 0 1 14 0c0 5.1-7 11.4-7 11.4z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.5h2.7l1.5 4-2 1.6a12 12 0 0 0 6.1 6.1l1.6-2 4 1.5v2.7a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11.5" height="11.5" rx="2"/><path d="M5.5 15H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v.5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- NOTICE BAR. To show a short announcement at the very top of the page (a holiday closure, a new item),
+     copy the line below out of this comment, to just after the comment, and change its text. Delete it when it is over.
+     <p class="notice">We are closed on Thursday, November 26. Back to normal hours on Friday.</p>
+-->
+
+<!-- ======================= HEADER ======================= -->
+<header class="site-head" id="top">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Shams Market, top of page">
+      <img src="assets/logo.svg" alt="" width="1802" height="310">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a href="#market">Market</a></li>
+        <li><a href="#kitchen">Kitchen</a></li>
+        <li><a href="#visit">Hours &amp; location</a></li>
+      </ul>
+    </nav>
+    <a class="bar-call" href="tel:+19165141471"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Call</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ======================= TOP OF PAGE: photo, headline, buttons ======================= -->
+  <section class="hero">
+    <div class="hero-media">
+      <img src="img/hero-2000.jpg" srcset="img/hero-1000.jpg 1000w, img/hero-2000.jpg 2000w" sizes="(min-width: 1000px) 64vw, 100vw" width="2000" height="1333" fetchpriority="high" alt="Afghan naan topped with nigella and sesame seeds, on a dark stone counter">
+    </div>
+    <div class="wrap hero-body">
+      <div class="hero-copy">
+        <!-- HOURS (1 of 6): shown until the live "Open now" status loads -->
+        <p class="status" data-status data-state="unknown"><span class="status-dot" aria-hidden="true"></span><span data-status-text>Open every day, 9 AM to 9 PM</span></p>
+        <h1><span class="sr">Shams Market. </span>Afghan bakery, food &amp; market</h1>
+        <!-- HOURS (2 of 6): the last sentence of this paragraph -->
+        <p class="lede">Fresh naan from our bakery, halal meat from our butcher, and hot kabob from our kitchen. Find us on Auburn Blvd in Sacramento, open every day from 9 AM to 9 PM.</p>
+        <div class="actions" id="hero-actions">
+          <a class="btn btn-red" href="https://www.google.com/maps/dir/?api=1&amp;destination=Shams%20Market%2C%203510%20Auburn%20Blvd%2C%20Sacramento%2C%20CA%2095821&amp;destination_place_id=ChIJuw4VRmvZmoARxQqanGToZnI" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Get directions</a>
+          <a class="btn btn-ghost" href="tel:+19165141471"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Call (916) 514-1471</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Four quick facts. HOURS (3 of 6): "Open 7 days a week" -->
+  <div class="facts">
+    <ul class="wrap">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Halal butcher and kitchen</li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Open 7 days a week</li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>EBT accepted</li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Dine in or take out</li>
+    </ul>
+  </div>
+
+  <!-- ======================= INSIDE THE MARKET: five photo cards ======================= -->
+  <section class="section market" id="market">
+    <div class="wrap">
+      <div class="head">
+        <div class="title">
+          <h2>Inside the market</h2>
+          <span class="fa" lang="fa-AF" dir="rtl">مارکیت</span>
+        </div>
+        <p>Afghan staples and international groceries, so your meals at home are complete.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-media">
+            <img src="img/bakery-1400.jpg" srcset="img/bakery-800.jpg 800w, img/bakery-1400.jpg 1400w" sizes="(min-width: 1160px) 46vw, 92vw" width="1400" height="933" loading="lazy" decoding="async" alt="Long sheets of Afghan naan, golden and dotted with seeds">
+          </div>
+          <div class="card-title">
+            <h3>Bakery</h3>
+            <span class="fa" lang="fa-AF" dir="rtl">نانوایی</span>
+          </div>
+          <p>Afghan naan, baked fresh every day inside our bakery. Long, golden and covered in seeds.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <img src="img/butcher-1400.jpg" srcset="img/butcher-800.jpg 800w, img/butcher-1400.jpg 1400w" sizes="(min-width: 700px) 46vw, 92vw" width="1400" height="933" loading="lazy" decoding="async" alt="Fresh cuts of beef on a butcher's block beside a knife">
+          </div>
+          <div class="card-title">
+            <h3>Halal butcher</h3>
+            <span class="fa" lang="fa-AF" dir="rtl">قصابی حلال</span>
+          </div>
+          <p>Fresh halal meat at the counter, cut and cleaned how you like it, and a wide variety of frozen meat as well.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <img src="img/produce-1200.jpg" srcset="img/produce-800.jpg 800w, img/produce-1200.jpg 1200w" sizes="(min-width: 1160px) 30vw, (min-width: 700px) 46vw, 92vw" width="1200" height="900" loading="lazy" decoding="async" alt="Bell peppers, eggplants, tomatoes and fresh dill">
+          </div>
+          <div class="card-title">
+            <h3>Fresh produce</h3>
+            <span class="fa" lang="fa-AF" dir="rtl">میوه و ترکاری تازه</span>
+          </div>
+          <p>Fresh vegetables and fruit, from eggplant and tomatoes to bunches of herbs.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <img src="img/groceries-1200.jpg" srcset="img/groceries-800.jpg 800w, img/groceries-1200.jpg 1200w" sizes="(min-width: 1160px) 30vw, (min-width: 700px) 46vw, 92vw" width="1200" height="900" loading="lazy" decoding="async" alt="Whole and ground spices laid out with silver spoons">
+          </div>
+          <div class="card-title">
+            <h3>Groceries</h3>
+            <span class="fa" lang="fa-AF" dir="rtl">مواد غذایی</span>
+          </div>
+          <p>Rice, spices, tea, dried fruit and nuts, with pantry staples from Afghanistan and around the world. We accept EBT on eligible groceries.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <img src="img/clothing-1200.jpg" srcset="img/clothing-800.jpg 800w, img/clothing-1200.jpg 1200w" sizes="(min-width: 1160px) 30vw, (min-width: 700px) 46vw, 92vw" width="1200" height="900" loading="lazy" decoding="async" alt="Scarves in many colors hanging side by side">
+          </div>
+          <div class="card-title">
+            <h3>Clothing and hijabs</h3>
+            <span class="fa" lang="fa-AF" dir="rtl">لباس و حجاب</span>
+          </div>
+          <p>Men&rsquo;s and women&rsquo;s cultural clothing, from peran tumban to abayas, and hijabs in hundreds of colors and styles.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= FROM OUR KITCHEN: the menu. Each <li> is one dish. ======================= -->
+  <section class="section kitchen" id="kitchen">
+    <div class="wrap kitchen-grid">
+      <div class="head">
+        <div class="title">
+          <h2>From our kitchen</h2>
+          <span class="fa" lang="fa-AF" dir="rtl">رستورانت</span>
+        </div>
+        <p>Afghan home cooking, made here every day. Sit down at one of our tables or take it home.</p>
+      </div>
+
+      <div class="kitchen-media">
+        <img src="img/kitchen-1600.jpg" srcset="img/kitchen-900.jpg 900w, img/kitchen-1600.jpg 1600w" sizes="(min-width: 960px) 50vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async" alt="Skewers of kabob grilling over glowing charcoal">
+      </div>
+
+      <div class="kitchen-menu">
+        <ul class="menu">
+          <li>
+            <div class="menu-title">
+              <h3>Kabob</h3>
+              <span class="fa" lang="fa-AF" dir="rtl">کباب</span>
+            </div>
+            <p>Cut small the Afghan way and grilled over charcoal, with several skewers to a plate.</p>
+          </li>
+          <li>
+            <div class="menu-title">
+              <h3>Qabuli palaw</h3>
+              <span class="fa" lang="fa-AF" dir="rtl">قابلی پلو</span>
+            </div>
+            <p>Seasoned rice with carrots and raisins, served over a tender lamb shank.</p>
+          </li>
+          <li>
+            <div class="menu-title">
+              <h3>Bolani</h3>
+              <span class="fa" lang="fa-AF" dir="rtl">بولانی</span>
+            </div>
+            <p>Thin stuffed flatbread, fried until crisp.</p>
+          </li>
+          <li>
+            <div class="menu-title">
+              <h3>Sheer yakh</h3>
+              <span class="fa" lang="fa-AF" dir="rtl">شیریخ</span>
+            </div>
+            <p>Afghan ice cream, served by the scoop.</p>
+          </li>
+        </ul>
+
+        <div class="kitchen-foot">
+          <p>Ask at the counter for the full menu, or call us with any questions.</p>
+          <a class="btn btn-ghost" href="tel:+19165141471"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Call (916) 514-1471</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= ADDRESS, HOURS, PHONE ======================= -->
+  <section class="section visit" id="visit">
+    <div class="wrap">
+      <div class="head">
+        <div class="title">
+          <h2>Find us on Auburn Blvd</h2>
+          <span class="fa" lang="fa-AF" dir="rtl">آدرس و ساعات کاری</span>
+        </div>
+      </div>
+
+      <div class="visit-grid">
+        <div class="info">
+          <div class="info-label">
+            <h3>Address</h3>
+            <span class="fa" lang="fa-AF" dir="rtl">آدرس</span>
+          </div>
+          <p class="big" id="address-text">3510 Auburn Blvd</p>
+          <p class="sub">Sacramento, CA 95821. Just east of Watt Ave.</p>
+          <div class="actions">
+            <a class="btn btn-red btn-sm" href="https://www.google.com/maps/dir/?api=1&amp;destination=Shams%20Market%2C%203510%20Auburn%20Blvd%2C%20Sacramento%2C%20CA%2095821&amp;destination_place_id=ChIJuw4VRmvZmoARxQqanGToZnI" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Get directions</a>
+            <button class="btn btn-line btn-sm" type="button" id="copy-address" data-copy="3510 Auburn Blvd, Sacramento, CA 95821" data-target="address-text"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg><span data-label aria-live="polite">Copy address</span></button>
+          </div>
+        </div>
+
+        <div class="info">
+          <div class="info-label">
+            <h3>Hours</h3>
+            <span class="fa" lang="fa-AF" dir="rtl">ساعات کاری</span>
+          </div>
+          <!-- HOURS (4 of 6): the headline, the note under it, and the seven data-hours values below.
+               data-hours is 24-hour time, "09:00-21:00". A midday break is "09:00-13:00,14:00-21:00". A closed day is "".
+               The "Open now" status on the page is worked out from these seven values. -->
+          <p class="big">9 AM to 9 PM</p>
+          <p class="sub">Every day of the week.</p>
+          <div class="today">
+            <ol class="week">
+              <li data-day="1" data-hours="09:00-21:00"><span class="sr">Monday, 9 AM to 9 PM</span><span aria-hidden="true">Mon</span></li>
+              <li data-day="2" data-hours="09:00-21:00"><span class="sr">Tuesday, 9 AM to 9 PM</span><span aria-hidden="true">Tue</span></li>
+              <li data-day="3" data-hours="09:00-21:00"><span class="sr">Wednesday, 9 AM to 9 PM</span><span aria-hidden="true">Wed</span></li>
+              <li data-day="4" data-hours="09:00-21:00"><span class="sr">Thursday, 9 AM to 9 PM</span><span aria-hidden="true">Thu</span></li>
+              <li data-day="5" data-hours="09:00-21:00"><span class="sr">Friday, 9 AM to 9 PM</span><span aria-hidden="true">Fri</span></li>
+              <li data-day="6" data-hours="09:00-21:00"><span class="sr">Saturday, 9 AM to 9 PM</span><span aria-hidden="true">Sat</span></li>
+              <li data-day="0" data-hours="09:00-21:00"><span class="sr">Sunday, 9 AM to 9 PM</span><span aria-hidden="true">Sun</span></li>
+            </ol>
+            <p class="status status-plain" data-status data-state="unknown" hidden><span class="status-dot" aria-hidden="true"></span><span data-status-text></span></p>
+          </div>
+        </div>
+
+        <div class="info">
+          <div class="info-label">
+            <h3>Phone</h3>
+            <span class="fa" lang="fa-AF" dir="rtl">تلیفون</span>
+          </div>
+          <p class="big" id="phone-text">(916) 514-1471</p>
+          <p class="sub">Call the store for the kitchen menu or any questions.</p>
+          <div class="actions">
+            <a class="btn btn-red btn-sm" href="tel:+19165141471"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Call the store</a>
+            <button class="btn btn-line btn-sm" type="button" id="copy-phone" data-copy="(916) 514-1471" data-target="phone-text"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg><span data-label aria-live="polite">Copy number</span></button>
+          </div>
+        </div>
+      </div>
+
+      <p class="links">
+        <a href="https://maps.google.com/?cid=8243531686769986245" target="_blank" rel="noopener">Shams Market on Google Maps</a>
+        <a href="https://www.tiktok.com/@shams_market" target="_blank" rel="noopener">@shams_market on TikTok</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======================= FOOTER. HOURS (5 of 6): the second line of the list ======================= -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <a class="foot-logo" href="#top" aria-label="Shams Market, back to top">
+        <img src="assets/logo-full.svg" alt="" width="1802" height="724" loading="lazy" decoding="async">
+      </a>
+      <ul class="foot-list">
+        <li>3510 Auburn Blvd, Sacramento, CA 95821</li>
+        <li>Open every day, 9 AM to 9 PM</li>
+        <li>(916) 514-1471</li>
+        <li><a href="https://www.tiktok.com/@shams_market" target="_blank" rel="noopener">TikTok: @shams_market</a></li>
+      </ul>
+    </div>
+    <p class="fine">&copy; 2026 Shams Market</p>
+  </div>
+</footer>
+
+<!-- Bar with two buttons that appears at the bottom of phone screens after scrolling. -->
+<div class="dock" id="dock">
+  <a class="btn btn-red" href="https://www.google.com/maps/dir/?api=1&amp;destination=Shams%20Market%2C%203510%20Auburn%20Blvd%2C%20Sacramento%2C%20CA%2095821&amp;destination_place_id=ChIJuw4VRmvZmoARxQqanGToZnI" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Directions</a>
+  <a class="btn btn-ghost" href="tel:+19165141471"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Call</a>
+</div>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>
