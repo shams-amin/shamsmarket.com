@@ -5,9 +5,10 @@
 
 It prints every problem it finds and exits with 1 if there are any.
 What it checks: every file the pages point to exists; the facts for search engines can be read and agree
-with the page (hours, phone); every photo has a description and a size; the Dari text uses Persian letters;
-and the files GitHub Pages needs are in place."""
-import json, pathlib, re, sys
+with the page (hours, phone, address); the page title, description and headline are in shape for search results;
+every photo has a description and a size; the Dari text uses Persian letters; and the files GitHub Pages and
+Google Search Console need are in place."""
+import html, json, pathlib, re, sys
 from html.parser import HTMLParser
 
 DOCS = pathlib.Path(__file__).resolve().parent.parent / 'docs'
@@ -117,6 +118,46 @@ def main():
             phones = {digits(t) for t in page.tels} | {digits(ld.get('telephone', ''))}
             if len(phones) != 1: problems.append(f'index.html: more than one phone number is in use: {sorted(phones)}')
             notes.append('hours: ' + '; '.join(f'{DAYS[d][:3]} {", ".join("-".join(s) for s in want[d]) or "closed"}' for d in (1, 2, 3, 4, 5, 6, 0)))
+
+    # how the page shows up in search results (see "Search (SEO)" in CLAUDE.md)
+    def meta(pattern):
+        m = re.search(pattern, text, re.S)
+        return html.unescape(m.group(1)) if m else None
+    title = meta(r'<title>(.*?)</title>')
+    desc = meta(r'<meta name="description" content="(.*?)">')
+    if not title: problems.append('index.html: there is no <title>')
+    elif len(title) > 60: problems.append(f'index.html: the <title> is {len(title)} characters; keep it to 60 so Google shows all of it')
+    if not desc: problems.append('index.html: there is no meta description')
+    elif len(desc) > 155: problems.append(f'index.html: the meta description is {len(desc)} characters; keep it to 155')
+    if title and meta(r'<meta property="og:title" content="(.*?)">') != title:
+        problems.append('index.html: og:title should be the same as the <title>')
+    if desc and meta(r'<meta property="og:description" content="(.*?)">') != desc:
+        problems.append('index.html: og:description should be the same as the meta description')
+    if meta(r'<link rel="canonical" href="(.*?)">') != 'https://www.shamsmarket.com/':
+        problems.append('index.html: the canonical link should be https://www.shamsmarket.com/')
+    h1s = len(re.findall(r'<h1[\s>]', text))
+    if h1s != 1: problems.append(f'index.html: there should be exactly one <h1>; found {h1s}')
+    for tag in re.findall(r'<iframe\b[^>]*>', text):
+        if 'title="' not in tag: problems.append('index.html: an <iframe> has no title')
+        if 'loading="lazy"' not in tag: problems.append('index.html: an <iframe> should have loading="lazy"')
+    if len(page.ld) == 1:
+        try: addr = json.loads(page.ld[0]).get('address', {})
+        except ValueError: addr = {}
+        if addr:
+            street = addr.get('streetAddress', '')
+            full = f"{street}, {addr.get('addressLocality', '')}, {addr.get('addressRegion', '')} {addr.get('postalCode', '')}"
+            if f'id="address-text">{street}<' not in text:
+                problems.append(f'index.html: the big address line should read exactly "{street}", as in the facts for search engines')
+            if f'data-copy="{full}"' not in text:
+                problems.append(f'index.html: the Copy address button should copy exactly "{full}"')
+            if f'<li>{full}</li>' not in text:
+                problems.append(f'index.html: the footer address should read exactly "{full}"')
+            notes.append('address: ' + full)
+    sitemap = DOCS / 'sitemap.xml'
+    if not sitemap.exists() or '<loc>https://www.shamsmarket.com/</loc>' not in sitemap.read_text():
+        problems.append('docs/sitemap.xml should list https://www.shamsmarket.com/')
+    if not list(DOCS.glob('google*.html')):
+        problems.append('docs/google….html is missing; Google Search Console needs that file to stay')
 
     # what GitHub Pages needs
     cname = DOCS / 'CNAME'
