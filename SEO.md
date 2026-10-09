@@ -133,7 +133,7 @@ guessed number in this table. A blank is better than a plausible number.
 
 | Where | State on 2026-10-08 | Who fixes it |
 | --- | --- | --- |
-| Google Business Profile ("Shams Market and Restaurant") | Matches. With Shams's yes on 2026-10-08: added the categories Afghan restaurant and Halal restaurant (Grocery store stays primary; Bakery, Butcher shop, Produce market kept), 11 services under Grocery store, a 736-character description, and the tagged website link. All went to Google's review that evening. Menu still empty: it needs the dishes and prices. | Shams, or Claude with his yes |
+| Google Business Profile ("Shams Market and Restaurant") | Matches. With Shams's yes on 2026-10-08: added the categories Afghan restaurant and Halal restaurant (Grocery store stays primary; Bakery, Butcher shop, Produce market kept), 11 services under Grocery store, a 736-character description, and the tagged website link. Google accepted the categories, description and link within about 15 minutes; the services were still in review that night. Menu still empty: it needs the dishes and prices. Dine-in, takeout and price-range fields had not appeared yet. | Shams, or Claude with his yes |
 | Yelp (yelp.com/biz/shams-market-sacramento) | Shows 9 AM to 8 PM; the site says 9 PM | Shams (Yelp for Business) |
 | Zabihah | 8:30 AM to 9 PM, a Tuesday error, no `#2`, no phone, no website | Shams |
 | MapQuest | Shows 9 AM to 8 PM | Updates from data providers |
@@ -142,7 +142,9 @@ guessed number in this table. A blank is better than a plausible number.
 
 ## The monthly review
 
-Once a month, not more often:
+Once a month, not more often. A scheduled task, "Shams Market monthly search check", runs these steps at 8:45 AM
+Pacific on the 9th of each month (first run 2026-10-09), adds a line to the log and changes nothing else.
+
 
 1. **Search Console:** compare the last 28 days with the 28 before: which searches bring visits, which show the
    page without a click, any page problem, and the Generative AI report.
