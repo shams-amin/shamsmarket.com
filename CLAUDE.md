@@ -150,7 +150,8 @@ theme overrides some of them in the two blocks just below. Change a value there 
 - Never invent a fact, a search volume or a ranking. Nothing hidden, nothing written for AI systems, no
   `llms.txt`, no star-rating markup.
 - Reviews: ask everyone the same way; never offer anything for one, ask only happy customers, pressure people
-  in the store, or ask them to mention something specific. Google's policy forbids all four.
+  in the store, ask them to mention something specific, or ask family or staff. Google's policy forbids all of
+  these. Shams's own scheduled review-replies task answers reviews; nothing else posts replies.
 - A new page needs Shams's facts and something of his own (a menu with prices, his photos). No copies of a
   page with a word swapped.
 - After a search change, leave it alone for 60 days.

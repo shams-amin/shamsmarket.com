@@ -1,7 +1,7 @@
 # Search (SEO) for shamsmarket.com
 
 Read this before changing the page title, the headline, the address or phone, the facts for search engines,
-or before adding a page. It follows the order of Nicholas Dulait's 2026 guide to SEO with Claude (pick the
+or before adding a page. It follows the order of Dulait's (2026) guide to SEO with Claude (pick the
 searches that bring customers, make the page deserve to rank, get named by others, then repeat slowly),
 corrected where Google's own rules or better evidence say otherwise. The sources are listed at the end.
 
@@ -17,26 +17,28 @@ Ranked by the strength of the evidence, as of October 2026.
 1. **The Google Business Profile.** The categories chosen affect local ranking (Google, n.d.-b), and the
    primary category is the factor local search specialists rank highest (Shaw, 2025). Being open at the time
    of the search lifts a listing (Hawkins, 2023). The number of reviews and their ratings count (Google, n.d.-c),
-   and a steady flow of new ones appears to count more than the total (Hawkins, 2025b). Services chosen from
+   and a steady flow of new ones appears to help ranking (Hawkins, 2025b). Services chosen from
    Google's own list help for matching searches (Hawkins, 2026).
 2. **The rating customers see.** 68% of consumers will only use a business rated four stars or more
    (Murphy, 2026). The store is at 3.8 from 1,136 reviews (2026-10-08). Only real reviews, asked for the
    right way (rule 12), move this.
 3. **The same name, address, phone and hours everywhere:** the Google listing, this site, Yelp, Zabihah,
    Apple Maps, Bing Places. Google may change a listing when other sources disagree with it (Google, n.d.-a).
-4. **A page that fully answers the search, in the customers' words.** Google's own engineers described
-   anchors (links), body text and user clicks as the basic relevance signals, and Google keeps 13 months of
-   click data by query and place (United States v. Google LLC, 2024). Searchers who come back to the
-   results unsatisfied count against a page.
+4. **A page that fully answers the search, in the customers' words.** A Google engineer described links,
+   the words on the page and clicks as the basic relevance signals (U.S. Department of Justice, 2025). Google
+   records whether searchers go back to the results and how quickly, and its Navboost system learns from 13
+   months of click-and-query data (United States v. Google LLC, 2024). A page that settles the search is the
+   goal.
 5. **Being named by others:** local press, community pages, food guides, directories people use. None of the
    independent Sacramento food pages found on 2026-10-08 names Shams Market.
 6. **Speed on phones.** Google's "good" marks: largest image or text shown within 2.5 s, response to a tap
    within 200 ms, layout shift under 0.1 (Google, 2025b). They count, but relevance comes first.
 
 AI answers draw on the same places. Google's AI Overviews and AI Mode need nothing extra on the page: no
-special files, no special markup, no rewriting for AI (Google, 2026a). Gemini uses Google Search and Maps;
+special files, no special markup, no rewriting for AI (Google, 2025a, 2026a). Gemini uses Google Search and Maps;
 Microsoft Copilot uses Bing and Bing Places; ChatGPT uses several search providers and, since July 2026,
-Yelp's listings and reviews (Mills, 2026); Perplexity has its own index and has used Yelp and Tripadvisor.
+Yelp's listings and reviews (Mills, 2026); Perplexity has its own index and has used Yelp and Tripadvisor data
+(McKay, 2024; Washenko, 2025).
 With an AI summary on the results page, people clicked a result in 8% of visits, against 15% without one
 (Chapekis & Lieb, 2025), so being named inside the answer matters more each year.
 
@@ -47,7 +49,7 @@ With an AI summary on the results page, people clicked a result in 8% of visits,
 | afghan grocery store sacramento, afghan market sacramento | title, "Inside the market" | not measured |
 | halal meat sacramento, halal butcher sacramento | title, "Halal butcher" card | not measured |
 | afghan bakery sacramento, afghan naan | headline, "Bakery" card | not measured |
-| afghan restaurant sacramento, kabob sacramento | "From our kitchen" (the Google listing has no restaurant category yet) | not measured |
+| afghan restaurant sacramento, kabob sacramento | "From our kitchen" (Afghan restaurant and Halal restaurant categories added to the Google listing 2026-10-08) | not measured |
 | halal market that accepts EBT | the four facts under the photo, "Groceries" card | not measured |
 | shams market menu, shams kabob menu | "From our kitchen" (four dishes; Google suggested both searches on 2026-10-08, so a full menu would be used) | not measured |
 | shams market hours, address, phone | "Find us on Auburn Blvd" | not measured |
@@ -65,9 +67,11 @@ guessed number in this table. A blank is better than a plausible number.
    earn the click: what you get, that EBT is accepted, the hours. `og:title` and `og:description` repeat them.
 3. **One `<h1>`,** and it names Sacramento.
 4. **The facts for search engines** are two `application/ld+json` blocks: the store (with its hours, address,
-   map position and listings) and the website (which sets the site name Google shows). They describe only what
-   the page shows. No star ratings: Google shows no stars for a business's markup of reviews about itself
-   (Google, 2026b). No FAQ markup: Google stopped showing FAQ results on 2026-05-07.
+   map position and listings) and the website (which sets the site name Google shows). They hold only true
+   facts that agree with the page and the Google listing; the price range came from Shams, and the map position
+   and listing links from the listings themselves. No star ratings: Google shows no stars for a business's markup
+   of reviews about itself (Google, 2026b). No FAQ markup: Google stopped showing FAQ results on 2026-05-07
+   (Google, 2026d).
 5. **Never invent a fact.** No made-up prices, awards, years in business, search volumes or rankings. If
    something is not known, ask Shams or leave it out.
 6. **Nothing hidden from visitors.** No keyword lists, no text in the page's colors, no sentences written for
@@ -91,9 +95,12 @@ guessed number in this table. A blank is better than a plausible number.
 12. **Reviews.** Ask every customer the same way: the "Review us on Google" link on the page, or the QR code
     Google makes in the Business Profile. Google forbids offering anything for a review, asking only happy
     customers, pressuring people to write one while they are in the store, and asking them to include specific
-    words or items (Google, n.d.-d). The US rule on fake reviews also bans paying for reviews that must say
-    something good (or bad) and suppressing bad ones (Federal Trade Commission, 2024). Reply to reviews
-    personally, within a week.
+    words or items, and staff review quotas (Google, n.d.-d). Never ask family, staff or friends to review the
+    store, never reward staff for reviews, and ask steadily rather than in bursts: Google removes reviews with a
+    conflict of interest or an unusual pattern. The US rule on fake reviews also bans paying for reviews that
+    must say something good (or bad), undisclosed reviews by owners, staff and their relatives, and suppressing
+    bad ones (Federal Trade Commission, 2024). Shams's own scheduled review-replies task answers new reviews;
+    keep its replies specific to each review.
 13. **Speed.** The top photo loads first: its `preload` line has `fetchpriority="high"` and the same list of sizes
     as the photo (`tools/check.py` compares them). Every photo has a width and a height. Nothing from another
     server holds up the first screen: the typefaces are stored in `docs/assets/fonts`. After a layout change,
@@ -107,15 +114,16 @@ guessed number in this table. A blank is better than a plausible number.
 - **Ask Shams first:** changing words visitors read, changing the title or headline, adding a page, and every
   change to the Google Business Profile or any other listing. (A change Shams asks for himself is made without
   asking again.)
-- **Never:** delete pages, edit `robots.txt` or the canonical link, send email outside, buy anything, post or
-  answer reviews in his name, or touch any repository other than this one.
+- **Never:** delete pages, edit `robots.txt` or the canonical link, send email outside, buy anything, post
+  anything in his name, post or edit review replies outside his own review-replies task, or touch any repository
+  other than this one.
 
 ## Google, Bing and the AI tools
 
 - **Google Search Console:** verified as `https://www.shamsmarket.com/` in Shams's Google account through the
   file `docs/google4219baa0cb6fee68.html` (do not delete or rename it). Sitemap submitted 2026-10-08. The
   Generative AI performance report (open to every site since 2026-08-31) shows how often the site appears in
-  AI Overviews and AI Mode. Settings, "Search generative AI control" must stay on "Include".
+  AI Overviews and AI Mode (Google, n.d.-e). Settings, "Search generative AI control" must stay on "Include".
 - **Bing:** the IndexNow key is `docs/e6b48a8d8394d39b672ce4170b761de1.txt`; `tools/indexnow.py` uses it. Bing
   Webmaster Tools is not set up yet: Shams signs in at bing.com/webmasters and imports the site from Google
   Search Console. Its AI Performance report counts citations in Copilot (Microsoft, 2026).
@@ -126,6 +134,7 @@ guessed number in this table. A blank is better than a plausible number.
 - **Checks:** Google's Rich Results Test should show one valid "Local businesses" item. PageSpeed Insights, phone
   setting, one run each on 2026-10-08: before the speed work 90 (first paint 2.6 s, largest paint 2.7 s); after it
   100 (first paint 0.9 s, largest paint 1.7 s, layout shift 0), with accessibility, best practices and SEO at 100.
+  Report: https://pagespeed.web.dev/analysis/https-www-shamsmarket-com/8zirgtblsn?form_factor=mobile
 - **AI crawlers:** `robots.txt` allows every crawler, including OAI-SearchBot (ChatGPT search), PerplexityBot,
   Claude-SearchBot and Bingbot. Keep it that way; blocking them keeps the store out of their answers.
 
@@ -200,6 +209,9 @@ October 8, 2026, from https://support.google.com/business/answer/7091
 Google. (n.d.-d). *Prohibited & restricted content*. Maps User Generated Content Policy Help. Retrieved
 October 8, 2026, from https://support.google.com/contributionpolicy/answer/7400114
 
+Google. (n.d.-e). *Generative AI performance report (Search)*. Search Console Help. Retrieved October 8, 2026,
+from https://support.google.com/webmasters/answer/16984139
+
 Google. (2025a). *AI features and your website*. Google Search Central. https://developers.google.com/search/docs/appearance/ai-features
 
 Google. (2025b). *Understanding Core Web Vitals and Google search results*. Google Search Central.
@@ -214,6 +226,8 @@ https://developers.google.com/search/docs/appearance/structured-data/review-snip
 Google. (2026c). *Spam policies for Google web search*. Google Search Central.
 https://developers.google.com/search/docs/essentials/spam-policies
 
+Google. (2026d). *Latest documentation updates*. Google Search Central. https://developers.google.com/search/updates
+
 Hawkins, J. (2023, December 7). *Google just added business hours as a new local pack ranking factor*. Sterling Sky.
 https://www.sterlingsky.ca/google-added-a-new-ranking-factor/
 
@@ -225,6 +239,9 @@ https://www.sterlingsky.ca/google-review-recency-ranking/
 
 Hawkins, J. (2026, September 22). *GBP services: Do services in Google Business Profiles impact ranking?* Sterling Sky.
 https://www.sterlingsky.ca/services-in-google-business-profile-impact-ranking/
+
+McKay, C. (2024, March 12). *Perplexity enhances AI search engine with direct Yelp data integration*. Maginative.
+https://www.maginative.com/article/perplexity-enhances-ai-search-engine-with-direct-yelp-data-integration/
 
 Microsoft. (2026, February 10). *Introducing AI Performance in Bing Webmaster Tools public preview*. Bing Webmaster Blog.
 https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview
@@ -239,3 +256,9 @@ Shaw, D. (2025, November 6). *Local search ranking factors 2026*. Whitespark. ht
 
 United States v. Google LLC, No. 1:20-cv-03010-APM (D.D.C. Aug. 5, 2024) (memorandum opinion).
 https://storage.courtlistener.com/recap/gov.uscourts.dcd.223205/gov.uscourts.dcd.223205.1033.0_2.pdf
+
+U.S. Department of Justice. (2025, February 18). *Call with Google engineer HJ Kim* [Exhibit PXR0356, redacted public
+version, United States v. Google LLC]. https://www.justice.gov/atr/media/1398871/dl
+
+Washenko, A. (2025, January 9). Perplexity will now show hotel information from TripAdvisor. *Engadget*.
+https://www.engadget.com/ai/perplexity-will-now-show-hotel-information-from-tripadvisor-202923788.html

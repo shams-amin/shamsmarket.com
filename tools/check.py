@@ -18,7 +18,13 @@ VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'met
 SVG_SELF = {'path', 'circle', 'rect', 'use', 'stop', 'line', 'polyline', 'polygon', 'ellipse'}
 DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 PHONE = re.compile(r'\(\d{3}\) \d{3}-\d{4}')
-TIMES = re.compile(r'\b(\d{1,2}(?::\d{2})? [AP]M) to (\d{1,2}(?::\d{2})? [AP]M)\b')
+# a written opening time: "9 AM to 9 PM", "9 AM – 8 PM", "9am-8pm", "9:30 a.m. to 10 p.m."
+TIMES = re.compile(r'(?<![\d:])(\d{1,2})(?::(\d{2}))?\s?([AaPp])\.?\s?[Mm]\.?\s*(?:to|–|—|-)\s*(\d{1,2})(?::(\d{2}))?\s?([AaPp])\.?\s?[Mm]\.?(?![A-Za-z])')
+
+
+def written(h, m, ap):
+    """('9', None, 'a') -> '9 AM', the way clock() writes it."""
+    return f'{int(h)}{":" + m if m and m != "00" else ""} {ap.upper()}M'
 problems, notes = [], []
 
 
@@ -153,7 +159,8 @@ def main():
                                         f'the facts for search engines say {got[d] or "closed"}')
             # every written time on the page ("9 AM to 9 PM") must be one of the real opening times
             real = {(clock(o), clock(c)) for spans in want.values() for o, c in spans}
-            for o, c in sorted(set(TIMES.findall(text))):
+            for h1, m1, a1, h2, m2, a2 in sorted(set(TIMES.findall(text))):
+                o, c = written(h1, m1, a1), written(h2, m2, a2)
                 if (o, c) not in real:
                     problems.append(f'index.html: the page says "{o} to {c}", but the hours list says '
                                     + ('; '.join(f'{a} to {b}' for a, b in sorted(real)) or 'closed every day'))
