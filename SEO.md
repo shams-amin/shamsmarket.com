@@ -17,7 +17,7 @@ Ranked by the strength of the evidence, as of October 2026.
 1. **The Google Business Profile.** The categories chosen affect local ranking (Google, n.d.-b), and the
    primary category is the factor local search specialists rank highest (Shaw, 2025). Being open at the time
    of the search lifts a listing (Hawkins, 2023). The number of reviews and their ratings count (Google, n.d.-c),
-   and a steady flow of new ones appears to count more than the total (Hawkins, 2025). Services chosen from
+   and a steady flow of new ones appears to count more than the total (Hawkins, 2025b). Services chosen from
    Google's own list help for matching searches (Hawkins, 2026).
 2. **The rating customers see.** 68% of consumers will only use a business rated four stars or more
    (Murphy, 2026). The store is at 3.8 from 1,136 reviews (2026-10-08). Only real reviews, asked for the
@@ -119,8 +119,13 @@ guessed number in this table. A blank is better than a plausible number.
 - **Bing:** the IndexNow key is `docs/e6b48a8d8394d39b672ce4170b761de1.txt`; `tools/indexnow.py` uses it. Bing
   Webmaster Tools is not set up yet: Shams signs in at bing.com/webmasters and imports the site from Google
   Search Console. Its AI Performance report counts citations in Copilot (Microsoft, 2026).
-- **Checks:** Google's Rich Results Test should show one valid "Local businesses" item. PageSpeed Insights on
-  2026-10-08, before the speed work: phone 90 (largest paint 2.7 s), desktop 99.
+- **Google Business Profile link:** the website field is tagged
+  `https://www.shamsmarket.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing` (2026-10-08, Shams's
+  yes). In Search Console, Performance, the Pages tab can then show clicks from the map listing apart from ordinary
+  results, though the tagged address does not always appear (Hawkins, 2025a). Visitors land on the same page.
+- **Checks:** Google's Rich Results Test should show one valid "Local businesses" item. PageSpeed Insights, phone
+  setting, one run each on 2026-10-08: before the speed work 90 (first paint 2.6 s, largest paint 2.7 s); after it
+  100 (first paint 0.9 s, largest paint 1.7 s, layout shift 0), with accessibility, best practices and SEO at 100.
 - **AI crawlers:** `robots.txt` allows every crawler, including OAI-SearchBot (ChatGPT search), PerplexityBot,
   Claude-SearchBot and Bingbot. Keep it that way; blocking them keeps the store out of their answers.
 
@@ -128,7 +133,7 @@ guessed number in this table. A blank is better than a plausible number.
 
 | Where | State on 2026-10-08 | Who fixes it |
 | --- | --- | --- |
-| Google Business Profile ("Shams Market and Restaurant") | Matches. Categories: Grocery store (primary), Bakery, Butcher shop, Produce market; no restaurant category. Services and menu empty. Description about 330 of 750 characters. | Shams, or Claude with his yes |
+| Google Business Profile ("Shams Market and Restaurant") | Matches. With Shams's yes on 2026-10-08: added the categories Afghan restaurant and Halal restaurant (Grocery store stays primary; Bakery, Butcher shop, Produce market kept), 11 services under Grocery store, a 736-character description, and the tagged website link. All went to Google's review that evening. Menu still empty: it needs the dishes and prices. | Shams, or Claude with his yes |
 | Yelp (yelp.com/biz/shams-market-sacramento) | Shows 9 AM to 8 PM; the site says 9 PM | Shams (Yelp for Business) |
 | Zabihah | 8:30 AM to 9 PM, a Tuesday error, no `#2`, no phone, no website | Shams |
 | MapQuest | Shows 9 AM to 8 PM | Updates from data providers |
@@ -165,6 +170,10 @@ Once a month, not more often:
   `tools/indexnow.py`, and "Also known as kabuli pulao" under qabuli palaw. `tools/check.py` now checks every
   phone number and written time, the map title, the top photo and the search files. Rules 4, 6, 8, 11, 12 and 13
   and the monthly review updated. Leave the title, headline and description alone until 2026-12-08.
+- 2026-10-08: With Shams's yes, on the Google Business Profile: categories Afghan restaurant and Halal restaurant,
+  11 services, the 736-character description and the tagged website link (see the listings table). Shams gave the
+  price range of a kitchen meal, $10 to $20 a person, now `priceRange` in the facts for search engines. He is not
+  sure the meat is zabiha, so the butcher card stays "halal". The kitchen keeps store hours.
 
 ## Sources
 
@@ -206,7 +215,10 @@ https://developers.google.com/search/docs/essentials/spam-policies
 Hawkins, J. (2023, December 7). *Google just added business hours as a new local pack ranking factor*. Sterling Sky.
 https://www.sterlingsky.ca/google-added-a-new-ranking-factor/
 
-Hawkins, J. (2025, July 28). *Review recency: Does it impact ranking?* [Case study]. Sterling Sky.
+Hawkins, J. (2025a, January 7). *Google Search Console advanced reporting: Unlock local SEO insights from Search
+Console*. Sterling Sky. https://www.sterlingsky.ca/search-console-tracking-local-pack/
+
+Hawkins, J. (2025b, July 28). *Review recency: Does it impact ranking?* [Case study]. Sterling Sky.
 https://www.sterlingsky.ca/google-review-recency-ranking/
 
 Hawkins, J. (2026, September 22). *GBP services: Do services in Google Business Profiles impact ranking?* Sterling Sky.
