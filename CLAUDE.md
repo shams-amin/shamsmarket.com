@@ -9,14 +9,18 @@ GitHub Pages publishes the `docs/` folder of the `main` branch, so **pushing to 
 
 ## How to make a change
 
-1. Edit the files under `docs/`. Most requests only touch `docs/index.html`.
+1. Edit the files under `docs/`. Most requests only touch `docs/index.html`. If the words on the page changed, set
+   `<lastmod>` in `docs/sitemap.xml` to today's date. Change it only then: Google and Bing trust it only while it
+   is honest.
 2. Run `python3 tools/check.py` and fix anything it reports.
 3. If you have a browser tool, look at `docs/index.html` at phone width (about 390 px) and desktop width
    (about 1440 px) before publishing. A layout change needs this; a wording change usually does not.
 4. Commit straight to `main` with a short message that says what changed, and push. Do not open a branch or a
    pull request. Shams wants the change live, and `main` is the only branch.
 5. Wait about a minute, then confirm the change at https://www.shamsmarket.com/. Browsers and GitHub's servers
-   can hold the previous copy for up to 10 minutes. Adding `?v=2` to the address gets a fresh copy.
+   can hold the previous copy for up to 10 minutes. Adding `?v=2` to the address gets a fresh copy. If the words
+   on the page changed, run `python3 tools/indexnow.py` so Bing (and Copilot and ChatGPT search, which use it)
+   picks the change up at once.
 6. Tell Shams what changed in a sentence or two, in plain words.
 
 To undo a change, `git revert` the commit and push. The page returns to how it was within a minute.
@@ -44,14 +48,18 @@ To undo a change, `git revert` the commit and push. The page returns to how it w
 | `docs/assets/site.css` | All the styling. Colors, fonts and sizes are named values at the top of the file. |
 | `docs/assets/site.js` | The live "Open now" status (worked out in the store's time zone), the copy buttons, and the bar of buttons on phones. |
 | `docs/assets/logo.svg`, `logo-full.svg` | The logo: the short version for the header, the full version for the footer. |
+| `docs/assets/fonts/` | The two typefaces, Jost (English) and Vazirmatn (Dari), and their license (`OFL.txt`). They are stored here so the page does not wait on Google Fonts. `site.css` and `404.html` load them. |
+| `docs/favicon.ico`, `favicon.svg`, `favicon-192.png`, `apple-touch-icon.png` | The icon in browser tabs, on phone home screens and beside the site in Google results. |
 | `docs/img/` | The photos, each in a large and a small size. |
 | `docs/404.html` | The page shown for an address that does not exist. Its styles are inside the file. |
 | `docs/shop/`, `docs/product-page/` | Addresses from the old website. Each one sends the visitor to the new page. |
 | `docs/CNAME`, `docs/.nojekyll` | Files GitHub Pages needs. Do not change, move or delete them. |
 | `docs/robots.txt`, `docs/sitemap.xml` | For search engines. |
 | `docs/google4219baa0cb6fee68.html` | Proves to Google Search Console that Shams owns the site. Do not change, rename or delete it. |
+| `docs/e6b48a8d8394d39b672ce4170b761de1.txt` | The IndexNow key, which lets the site tell Bing about a change. Public on purpose. Do not change, rename or delete it. |
+| `tools/indexnow.py` | Tells Bing and the other IndexNow search engines that the page changed. Run it after a wording change is live. |
 | `SEO.md` | The rules for search: the searches the store wants, what must match the Google listing, who may change what, and a log. Read it before touching the title, headline, address, phone or the facts for search engines. |
-| `tools/check.py` | The check to run before every push. |
+| `tools/check.py` | The check to run before every push. It compares every phone number, address and written time on the page with the facts for search engines, and checks the top photo, the fonts and the files search engines read. |
 
 Do not rename or move the `docs/` folder. GitHub Pages is set to publish that exact folder.
 
@@ -112,7 +120,7 @@ Each photo has a large and a small file. Keep these shapes and sizes so the card
 
 | Photo | Shape | Large file | Small file |
 | --- | --- | --- | --- |
-| `hero` (top of page) | 3:2 | 2000 px wide | 1000 px wide |
+| `hero` (top of page) | 3:2 | 2000 px wide, plus a 1400 px middle size | 1000 px wide |
 | `kitchen` | 3:2 | 1600 px wide | 900 px wide |
 | `bakery`, `butcher` | 3:2 | 1400 px wide | 800 px wide |
 | `produce`, `groceries`, `clothing` | 4:3 | 1200 px wide | 800 px wide |
@@ -120,7 +128,10 @@ Each photo has a large and a small file. Keep these shapes and sizes so the card
 Save as JPEG in sRGB, quality about 76, each file under 450 KB. The simplest way is to keep the same file
 names. If a name changes, update `src`, `srcset`, `width` and `height` on the `<img>`. Always rewrite the `alt`
 text so it describes the new photo. The hero photo is also named in the `preload` line and in the `og:image`
-and `"image"` values near the top of the file.
+and `"image"` values near the top of the file. The hero comes in three sizes (`hero-1000.jpg`, `hero-1400.jpg`,
+`hero-2000.jpg`) because it decides how fast the page appears; the `preload` line must list the same sizes as
+the hero `<img>`, which `tools/check.py` checks. Photos the store took itself are worth more to customers and to
+Google than stock photos, so swap them in whenever Shams sends some.
 
 ### Colors, fonts, spacing
 
@@ -134,11 +145,17 @@ theme overrides some of them in the two blocks just below. Change a value there 
 - The title, the description, the one `<h1>`, the address, the phone and the facts for search engines were set
   on 2026-10-08 so that the page agrees with the store's Google listing and says what people search for.
   Do not change them, or the words visitors read, for search reasons without asking Shams.
-- Never invent a fact, a search volume or a ranking. Nothing hidden, nothing written for AI systems.
+- Most of the store's search traffic comes through its Google Business Profile. Changes to that profile, or to
+  Yelp, Zabihah, Apple or Bing listings, are made only with Shams's yes, every time.
+- Never invent a fact, a search volume or a ranking. Nothing hidden, nothing written for AI systems, no
+  `llms.txt`, no star-rating markup.
+- Reviews: ask everyone the same way; never offer anything for one, ask only happy customers, pressure people
+  in the store, or ask them to mention something specific. Google's policy forbids all four.
 - A new page needs Shams's facts and something of his own (a menu with prices, his photos). No copies of a
   page with a word swapped.
 - After a search change, leave it alone for 60 days.
 - The site is verified in Google Search Console under Shams's Google account, and the sitemap is submitted.
+  Bing hears about changes through IndexNow (`tools/indexnow.py`).
 
 ## Hosting and domain
 
@@ -151,7 +168,10 @@ theme overrides some of them in the two blocks just below. Change a value there 
   `http://www.shamsmarket.com/` ever stops redirecting to `https://`, switch Enforce HTTPS back on there, or
   run `gh api -X PUT repos/shams-amin/shamsmarket.com/pages -F https_enforced=true`.
 - **Domain:** `shamsmarket.com` is registered with Squarespace Domains and renews there every autumn.
-  `shamsmarket.net` is registered there too and forwards to `shamsmarket.com`. There is no email on either.
+  `shamsmarket.net` is registered there too and is meant to forward to `shamsmarket.com`. On 2026-10-08 it did so
+  only over `http://` (a temporary 302); `https://shamsmarket.net/` showed a Squarespace "Coming Soon" page. The fix
+  is in Squarespace (Domains, shamsmarket.net): forward to `https://www.shamsmarket.com`, permanent, with SSL on.
+  There is no email on either domain.
 - **DNS records:** four `A` records for `shamsmarket.com` (`185.199.108.153`, `185.199.109.153`,
   `185.199.110.153`, `185.199.111.153`) and one `CNAME` record that points `www` to `shams-amin.github.io`.
   These are the addresses GitHub publishes for GitHub Pages. One `TXT` record,
@@ -183,7 +203,8 @@ To finish, in Shams's Squarespace account (Domains, shamsmarket.com):
 2. Under DNS Settings, Custom records, add the six records above (host `@` for the `A` records) and four
    `AAAA` records for `@`: `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`,
    `2606:50c0:8003::153`.
-3. Under DNS, Domain Nameservers, choose USE SQUARESPACE NAMESERVERS.
+3. Under DNS, Domain Nameservers, choose USE SQUARESPACE NAMESERVERS. While signed in, also fix the forwarding of
+   `shamsmarket.net` (see "Hosting and domain").
 4. Run the checks below. Some networks keep using the old nameservers for up to 48 hours, which is why the
    records stay in Wix as well.
 5. Two days after step 3, tell Shams that the Wix plan can be cancelled and the domain removed from Wix.

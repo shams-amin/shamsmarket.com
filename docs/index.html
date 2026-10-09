@@ -26,11 +26,13 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preload" as="image" href="img/hero-2000.jpg" imagesrcset="img/hero-1000.jpg 1000w, img/hero-2000.jpg 2000w" imagesizes="(min-width: 1000px) 64vw, 100vw">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&amp;family=Vazirmatn:wght@500&amp;display=swap">
+<!-- The top photo is the largest thing on the first screen, so it starts loading first. Keep this list of sizes the same
+     as the srcset and sizes on the hero <img> below; tools/check.py compares them. -->
+<link rel="preload" as="image" fetchpriority="high" href="img/hero-2000.jpg" imagesrcset="img/hero-1000.jpg 1000w, img/hero-1400.jpg 1400w, img/hero-2000.jpg 2000w" imagesizes="(min-width: 1000px) 64vw, 100vw">
+<!-- The two typefaces are stored on this site (assets/fonts), so the page does not wait on another server. -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/jost-latin.woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
 <!-- Facts for Google and other search engines. Keep them the same as what the page says. -->
 <script type="application/ld+json">
@@ -94,6 +96,24 @@
   ]
 }
 </script>
+<!-- The name Google shows for this website in search results. Keep "name" the same as og:site_name above. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.shamsmarket.com/#website",
+  "name": "Shams Market",
+  "alternateName": [
+    "Shams Market and Restaurant",
+    "شمس مارکیت"
+  ],
+  "url": "https://www.shamsmarket.com/",
+  "inLanguage": "en",
+  "publisher": {
+    "@id": "https://www.shamsmarket.com/#store"
+  }
+}
+</script>
 </head>
 <body>
 
@@ -136,7 +156,7 @@
   <!-- ======================= TOP OF PAGE: photo, headline, buttons ======================= -->
   <section class="hero">
     <div class="hero-media">
-      <img src="img/hero-2000.jpg" srcset="img/hero-1000.jpg 1000w, img/hero-2000.jpg 2000w" sizes="(min-width: 1000px) 64vw, 100vw" width="2000" height="1333" fetchpriority="high" alt="Afghan naan topped with nigella and sesame seeds, on a dark stone counter">
+      <img src="img/hero-2000.jpg" srcset="img/hero-1000.jpg 1000w, img/hero-1400.jpg 1400w, img/hero-2000.jpg 2000w" sizes="(min-width: 1000px) 64vw, 100vw" width="2000" height="1333" fetchpriority="high" alt="Afghan naan topped with nigella and sesame seeds, on a dark stone counter">
     </div>
     <div class="wrap hero-body">
       <div class="hero-copy">
@@ -177,7 +197,7 @@
       <div class="cards">
         <article class="card">
           <div class="card-media">
-            <img src="img/bakery-1400.jpg" srcset="img/bakery-800.jpg 800w, img/bakery-1400.jpg 1400w" sizes="(min-width: 1160px) 46vw, 92vw" width="1400" height="933" loading="lazy" decoding="async" alt="Long sheets of Afghan naan, golden and dotted with seeds">
+            <img src="img/bakery-1400.jpg" srcset="img/bakery-800.jpg 800w, img/bakery-1400.jpg 1400w" sizes="(min-width: 1312px) 584px, (min-width: 1160px) 46vw, 92vw" width="1400" height="933" loading="lazy" decoding="async" alt="Long sheets of Afghan naan, golden and dotted with seeds">
           </div>
           <div class="card-title">
             <h3>Bakery</h3>
@@ -188,7 +208,7 @@
 
         <article class="card">
           <div class="card-media">
-            <img src="img/butcher-1400.jpg" srcset="img/butcher-800.jpg 800w, img/butcher-1400.jpg 1400w" sizes="(min-width: 700px) 46vw, 92vw" width="1400" height="933" loading="lazy" decoding="async" alt="Fresh cuts of beef on a butcher's block beside a knife">
+            <img src="img/butcher-1400.jpg" srcset="img/butcher-800.jpg 800w, img/butcher-1400.jpg 1400w" sizes="(min-width: 1312px) 584px, (min-width: 700px) 46vw, 92vw" width="1400" height="933" loading="lazy" decoding="async" alt="Fresh cuts of beef on a butcher's block beside a knife">
           </div>
           <div class="card-title">
             <h3>Halal butcher</h3>
@@ -199,7 +219,7 @@
 
         <article class="card">
           <div class="card-media">
-            <img src="img/produce-1200.jpg" srcset="img/produce-800.jpg 800w, img/produce-1200.jpg 1200w" sizes="(min-width: 1160px) 30vw, (min-width: 700px) 46vw, 92vw" width="1200" height="900" loading="lazy" decoding="async" alt="Bell peppers, eggplants, tomatoes and fresh dill">
+            <img src="img/produce-1200.jpg" srcset="img/produce-800.jpg 800w, img/produce-1200.jpg 1200w" sizes="(min-width: 1312px) 379px, (min-width: 1160px) 30vw, (min-width: 700px) 46vw, 92vw" width="1200" height="900" loading="lazy" decoding="async" alt="Bell peppers, eggplants, tomatoes and fresh dill">
           </div>
           <div class="card-title">
             <h3>Fresh produce</h3>
@@ -210,7 +230,7 @@
 
         <article class="card">
           <div class="card-media">
-            <img src="img/groceries-1200.jpg" srcset="img/groceries-800.jpg 800w, img/groceries-1200.jpg 1200w" sizes="(min-width: 1160px) 30vw, (min-width: 700px) 46vw, 92vw" width="1200" height="900" loading="lazy" decoding="async" alt="Whole and ground spices laid out with silver spoons">
+            <img src="img/groceries-1200.jpg" srcset="img/groceries-800.jpg 800w, img/groceries-1200.jpg 1200w" sizes="(min-width: 1312px) 379px, (min-width: 1160px) 30vw, (min-width: 700px) 46vw, 92vw" width="1200" height="900" loading="lazy" decoding="async" alt="Whole and ground spices laid out with silver spoons">
           </div>
           <div class="card-title">
             <h3>Groceries</h3>
@@ -221,7 +241,7 @@
 
         <article class="card">
           <div class="card-media">
-            <img src="img/clothing-1200.jpg" srcset="img/clothing-800.jpg 800w, img/clothing-1200.jpg 1200w" sizes="(min-width: 1160px) 30vw, (min-width: 700px) 46vw, 92vw" width="1200" height="900" loading="lazy" decoding="async" alt="Scarves in many colors hanging side by side">
+            <img src="img/clothing-1200.jpg" srcset="img/clothing-800.jpg 800w, img/clothing-1200.jpg 1200w" sizes="(min-width: 1312px) 379px, (min-width: 1160px) 30vw, (min-width: 700px) 46vw, 92vw" width="1200" height="900" loading="lazy" decoding="async" alt="Scarves in many colors hanging side by side">
           </div>
           <div class="card-title">
             <h3>Clothing and hijabs</h3>
@@ -245,7 +265,7 @@
       </div>
 
       <div class="kitchen-media">
-        <img src="img/kitchen-1600.jpg" srcset="img/kitchen-900.jpg 900w, img/kitchen-1600.jpg 1600w" sizes="(min-width: 960px) 50vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async" alt="Skewers of kabob grilling over glowing charcoal">
+        <img src="img/kitchen-1600.jpg" srcset="img/kitchen-900.jpg 900w, img/kitchen-1600.jpg 1600w" sizes="(min-width: 1312px) 591px, (min-width: 960px) 50vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async" alt="Skewers of kabob grilling over glowing charcoal">
       </div>
 
       <div class="kitchen-menu">
@@ -262,7 +282,7 @@
               <h3>Qabuli palaw</h3>
               <span class="fa" lang="fa-AF" dir="rtl">قابلی پلو</span>
             </div>
-            <p>Seasoned rice with carrots and raisins, served over a tender lamb shank.</p>
+            <p>Seasoned rice with carrots and raisins, served over a tender lamb shank. Also known as kabuli pulao.</p>
           </li>
           <li>
             <div class="menu-title">

@@ -24,7 +24,11 @@ You can also edit by hand: change a file under `docs/`, commit to `main`, and it
 - GitHub Pages serves that folder for free at `www.shamsmarket.com`.
 - The domain is registered with Squarespace Domains, and its DNS records point to GitHub Pages.
 - `python3 tools/check.py` checks the files before a change is published.
-- `SEO.md` has the rules for how the site shows up in search, and a log of what was changed for search.
+- `python3 tools/indexnow.py` tells Bing (and through it Copilot and ChatGPT search) that the page changed.
+- `SEO.md` has the rules for how the site shows up in search, the listings that must match, a monthly review,
+  and a log of what was changed for search.
+- The typefaces, Jost and Vazirmatn, are stored in `docs/assets/fonts` under the SIL Open Font License
+  (`docs/assets/fonts/OFL.txt`).
 
 ## Photos
 

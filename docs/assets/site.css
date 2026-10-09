@@ -2,6 +2,12 @@
    running off the right edge; five market counters as photo cards, two large then three small; a black
    kitchen section with its photo on the left and the menu on the right; hours and location in three
    columns. Every title carries its Dari name beside it, set quietly. */
+
+/* typefaces, stored in assets/fonts (license: assets/fonts/OFL.txt). Jost is one variable file for every weight;
+   Vazirmatn is the Arabic-script set at weight 500, which covers Dari. */
+@font-face{font-family:'Jost';font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/jost-latin.woff2) format('woff2')}
+@font-face{font-family:'Vazirmatn';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/vazirmatn-arabic.woff2) format('woff2')}
+
 :root{
   /* color: the logo's black and red; green only for "open" */
   --black:#121010;
