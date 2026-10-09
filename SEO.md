@@ -185,6 +185,24 @@ Pacific on the 9th of each month (first run 2026-10-09), adds a line to the log 
   11 services, the 736-character description and the tagged website link (see the listings table). Shams gave the
   price range of a kitchen meal, $10 to $20 a person, now `priceRange` in the facts for search engines. He is not
   sure the meat is zabiha, so the butcher card stays "halal". The kitchen keeps store hours.
+- 2026-10-09: First monthly check (one day after launch, so mostly a baseline). `tools/check.py` passed. www 200,
+  bare domain 301 to www, http 301 to https; `shamsmarket.net` still a 302 over http and "Coming Soon" over https;
+  nameservers still Wix's. Search Console: Performance and Page indexing "processing data", so clicks, impressions,
+  queries, pages and the Generative AI report not measured; AI control "Include" (inherited). Business Profile:
+  3.8 from 1,136 reviews (no change); May to Oct 2026 totals 10,176 interactions, 40,150 profile views, 20,960
+  searches (top: "grocery store" 4,778); calls, directions and website clicks not measured (those tabs did not load).
+  Both new categories, all 11 services, the description and the tagged link are live. Google, signed-in Chrome
+  with pws=0 (not a private window): shamsmarket.com shows the new title and is the 2nd web result for afghan
+  grocery store sacramento, afghan bakery sacramento and halal market sacramento ebt (AI Overview for the EBT
+  search cites Shams Market); absent from page 1 for halal meat sacramento and afghan restaurant sacramento. Not
+  in the top three map results for any of the five (afghan grocery: Afghan Super Market, Afghan Halal Market,
+  Halal Mart; halal meat: Sunrise, Red Sea, Salam; restaurant: Hawasana Bolani, Aria, Rose Halal; bakery: Afghan
+  Supermarket & Bakery, Golden Bread House, Middle East Bakery; EBT: Halal Mart, Sunrise, All Mart). Perplexity
+  (logged out) named Shams Market "best overall" Afghan grocery, citing shamsmarket.com; not named for halal meat
+  or Afghan restaurant. ChatGPT and Gemini skipped (only Shams's signed-in accounts), Copilot needs sign-in.
+  Listings: Bing matches fully (name, `#2`, phone, 9 to 9) but its web result still shows the old Wix snippet;
+  Apple Maps matches hours and phone, no `#2`, unclaimed, 57% of 63; Yelp still 9 AM to 8 PM, 3.1 from 58;
+  Zabihah unchanged (8:30, Tuesday ends 9 AM, garbled Dari text, says "certified halal").
 
 ## Sources
 
