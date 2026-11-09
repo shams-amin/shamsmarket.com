@@ -203,6 +203,29 @@ Pacific on the 9th of each month (first run 2026-10-09), adds a line to the log 
   Listings: Bing matches fully (name, `#2`, phone, 9 to 9) but its web result still shows the old Wix snippet;
   Apple Maps matches hours and phone, no `#2`, unclaimed, 57% of 63; Yelp still 9 AM to 8 PM, 3.1 from 58;
   Zabihah unchanged (8:30, Tuesday ends 9 AM, garbled Dari text, says "certified halal").
+- 2026-11-09: Monthly check. `tools/check.py` passed. www 200, bare domain 301 to www; `shamsmarket.net` still a 302 to
+  http://shamsmarket.com over http and "Coming Soon" over https; nameservers still Wix's. Search Console, last 28 days
+  against the 28 before (the earlier window is mostly the old Wix site, so the rise is not a clean comparison): clicks 57
+  against 6, impressions 3,390 against 514, CTR 1.7% against 1.2%, average position 11.6 against 8.1. Top queries by
+  clicks: shams market 13, shams market sacramento 4, مطعم شمس 2. Shown without clicks: afghan market sacramento 51
+  impressions, halal market sacramento 22, afghan restaurant sacramento 11. Pages: home 30 clicks, tagged gbp-listing
+  address 27 clicks and 1,583 impressions, /product-page/hijabs 1. Page indexing: 5 indexed, 4 "Page with redirect"
+  (expected). Generative AI report since 2026-10-08: 406 impressions (home 333, tagged address 71). AI control "Include"
+  (inherited). Business Profile: 3.8 from 1,152 reviews (+16); Jun to Nov 2026 totals 9,856 interactions, 40,377 profile
+  views, 21,472 searches (top: "grocery store" 4,688), 3,509 calls, 6,016 directions, 331 website clicks; October against
+  September: calls 650/647, directions 1,072/1,128, website clicks 42/62; October interactions 1,764. Both new categories,
+  the 11 services, the description and the tagged link are live; hours 9 to 9; no special hours set. Google, signed-in
+  Chrome with pws=0 (not a private window), no AI Overview appeared on any of the five: web results 3rd for afghan grocery
+  store sacramento (2nd last month), 2nd for afghan bakery sacramento (same), 4th for halal market sacramento ebt (2nd last
+  month); absent from page 1 for halal meat sacramento and afghan restaurant sacramento. Not in the top three map results
+  for any (afghan grocery: Afghan Halal Market, Afghan Super Market, Afghan Supermarket & Bakery; halal meat: Sunrise, Royal
+  International, Halal Mart; restaurant: Aria, Barg, Ansaf; bakery: Afghan Supermarket & Bakery, Golden Bread House, Afghan
+  Halal Market; EBT: Sunrise, Halal Mart, Halal Mini Mart). Perplexity (logged out) named Shams Market first pick for Afghan
+  grocery, citing shamsmarket.com; not named for halal meat (Shan, Red Sea, Afghan Halal Market, Sunrise, Halal Mart) or
+  Afghan restaurant (Aria, citing the Sacramento Bee; Darbar). ChatGPT and Gemini skipped (only Shams's signed-in accounts),
+  Copilot needs sign-in. Listings: Yelp now 9 to 9 (fixed), 3.1 from 57, no `#2`; Bing matches, 3/5 from 58 Yelp reviews,
+  and now shows the new description; Apple Maps 9 to 9, phone matches, no `#2`, unclaimed, 58% of 66; Zabihah unchanged
+  (8:30, Tuesday ends 9 AM, garbled Dari text, no `#2`, no phone, no website).
 
 ## Sources
 
